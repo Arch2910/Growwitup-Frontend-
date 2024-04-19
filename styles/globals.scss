@@ -1,0 +1,500 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Rhodium+Libre&display=swap");
+
+@import "theme";
+
+@import "./Navbar.module.scss";
+@import "./MainSection.module.scss";
+
+$transition-duration: 100ms;
+$roboto-fonts: "Roboto", sans-serif;
+$lato-fonts: "Lato", sans-serif;
+$jost-fonts: "Jost", sans-serif;
+$poppins-fonts: "Poppins", sans-serif;
+$montserrat-fonts: "Montserrat", sans-serif;
+$inter-fonts: "Inter", sans-serif;
+
+.light-mode {
+  background-color: $background-color-light;
+  transition: all $transition-duration ease;
+}
+
+.dark-mode {
+  background-color: $background-color-dark;
+  transition: all $transition-duration ease;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Inter";
+  transition: all 3s ease;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  transition: all 0s ease;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgb(44, 44, 44);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(58, 58, 58);
+}
+
+.contain {
+  max-width: 1366px;
+  margin: auto;
+
+  .sun-moon {
+    position: fixed;
+    top: 20px;
+    right: 10px;
+    z-index: 10;
+  }
+
+  .link {
+    color: $primary-color-dark;
+  }
+
+  .fa-light-convert {
+    color: $primary-color-light;
+  }
+
+  .fa-dark-convert {
+    color: $light-color-dark;
+  }
+
+  .call-to-action {
+    background-color: $primary-color-dark;
+    width: 158px;
+    color: $light-color-dark;
+    border-radius: 39px;
+    font-family: $roboto-fonts;
+    font-size: 15px;
+    padding: 14px 18px;
+    letter-spacing: 0.5px;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+      7px 7px 10px 0px rgba(0, 0, 0, 0.1), 4px 4px 10px 0px rgba(0, 0, 0, 0.1);
+    transition: all ease 450ms;
+    &:hover {
+      transform: scale(1.01);
+      box-shadow: none;
+    }
+  }
+
+  .primary-header {
+    font-size: 40px;
+    text-transform: uppercase;
+    color: $light-color-dark;
+    font-family: $lato-fonts;
+    position: relative;
+    width: fit-content;
+    margin: auto;
+
+    span {
+      color: $secondary-color-dark;
+      margin-right: 10px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 70%;
+      left: 103%;
+      width: 230px;
+      border-bottom: 5px solid $secondary-color-dark;
+      border-radius: 5px;
+    }
+  }
+
+  .l-primary-header {
+    color: $primary-color-light;
+    span {
+      color: $tertiary-color-light !important;
+    }
+    &::after {
+      border-color: $tertiary-color-light;
+    }
+  }
+
+  .service-card {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: $primary-color-dark-dark;
+    max-width: 300px;
+    padding: 26px 24px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all ease 450ms;
+
+    h3 {
+      font-family: $poppins-fonts;
+      font-weight: 300;
+      font-size: 24px;
+      color: $light-color-dark;
+      margin-top: 24px;
+      line-height: 28px;
+      height: 70px;
+      display: flex;
+    }
+    p {
+      font-family: $jost-fonts;
+      margin-top: 28px;
+      font-size: 16px;
+      letter-spacing: 0.6px;
+      font-weight: 300;
+      color: $light-color-dark;
+      max-height: 210px;
+      overflow-y: scroll;
+      scrollbar-width: none;
+    }
+
+    img {
+      transition: all ease 800ms;
+    }
+
+    &:hover {
+      transform: rotateZ(10deg) scale(1.1);
+      z-index: 2;
+      box-shadow: rgba(99, 99, 99, 0.8) 0px 2px 8px 0px;
+
+      img {
+        transform: translateX(50px);
+      }
+    }
+  }
+
+  .l-service-card {
+    background-color: white;
+    h3 {
+      color: $primary-color-light;
+    }
+    p {
+      color: $primary-color-light;
+    }
+  }
+
+  .portfolio-card {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: $primary-color-dark-dark;
+    max-width: 420px;
+    border-radius: 16px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all ease 450ms;
+
+    img {
+      padding: 6px;
+      border-radius: 16px 16px 0 0;
+      width: 420px;
+      height: 280px;
+      background-repeat: no-repeat;
+      background-clip: border-box;
+      background-size: contain;
+      transition: all ease 450ms;
+    }
+
+    h3 {
+      font-family: $jost-fonts;
+      font-size: 24px;
+      font-weight: 500px;
+      color: $light-color-dark;
+      line-height: 30px;
+      margin-top: 14px;
+    }
+
+    .project-content {
+      padding: 25px 30px;
+    }
+
+    .service-tag {
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: $secondary-color-dark;
+      font-family: $jost-fonts;
+      font-weight: 600;
+    }
+
+    .project-description {
+      font-family: $jost-fonts;
+      margin-top: 20px;
+      color: $light-color-dark;
+      font-weight: 300;
+      font-size: 16px;
+      letter-spacing: 0.4px;
+    }
+
+    &:hover {
+      box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
+      transform: scale(1.05);
+      z-index: 2;
+      img {
+        padding: 0px;
+      }
+    }
+  }
+
+  .l-portfolio-card {
+    background-color: white;
+    h3 {
+      color: $primary-color-light;
+    }
+    .service-tag {
+      color: $tertiary-color-light;
+    }
+    .project-description {
+      color: $primary-color-light !important;
+    }
+  }
+
+  .testimonial-card {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: $primary-color-dark-dark;
+    max-width: 420px;
+    border-radius: 16px;
+    box-sizing: border-box;
+    padding: 36px 30px;
+    color: $light-color-dark;
+    cursor: pointer;
+    transition: all ease 450ms;
+
+    .testimonial-desc {
+      .service-tag {
+        transition: all ease 450ms;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 0.45px;
+        font-family: $jost-fonts;
+        font-weight: 600;
+      }
+
+      h3 {
+        transition: all ease 450ms;
+        font-family: $jost-fonts;
+        font-size: 24px;
+        font-weight: 500px;
+        line-height: 30px;
+        margin-top: 0.85rem;
+      }
+
+      .description {
+        font-family: $jost-fonts;
+        margin-top: 24px;
+        color: $light-color-dark;
+        font-weight: 300;
+        font-size: 16px;
+        letter-spacing: 0.4px;
+        height: 190px;
+        overflow-y: scroll;
+        scrollbar-width: none;
+      }
+    }
+
+    .client-section {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 2rem;
+      align-items: center;
+
+      .client-image {
+        grid-row: 1 / 3;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        transition: all ease 450ms;
+      }
+      .cilent-name {
+        grid-column: 2 / 5;
+        font-family: $jost-fonts;
+        font-size: 1.25rem;
+      }
+      .client-description {
+        grid-column: 2 / 5;
+        font-size: 0.85rem;
+        font-family: $montserrat-fonts;
+        span {
+          font-family: $jost-fonts;
+          text-transform: uppercase;
+          opacity: 0.65;
+        }
+      }
+    }
+    &:hover {
+      box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
+      transform: scale(1.05);
+      .testimonial-desc {
+        .service-tag {
+          transform: translateX(10px);
+          text-shadow: 0 0 10px #ffa500, 0 0 20px #ffa500, 0 0 30px #ff0000;
+        }
+        h3 {
+          transform: translateX(10px);
+          text-shadow: 0px 5px 15px rgba(245, 245, 245, 0.8);
+        }
+      }
+      .client-section {
+        .client-image {
+          transform: scale(1.3);
+        }
+      }
+    }
+  }
+
+  .l-testimonial-card {
+    background-color: white;
+    color: $primary-color-light;
+    .testimonial-desc {
+      .description {
+        color: $primary-color-light;
+      }
+    }
+    &:hover {
+      .testimonial-desc {
+        h3 {
+          text-shadow: 0px 5px 15px rgba(81, 67, 21, 0.8);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .contain {
+    width: 100vw;
+    margin: auto;
+    padding: 0 3rem;
+
+    .l-portfolio-card {
+      background-color: white;
+      h3 {
+        color: $primary-color-light;
+      }
+      .service-tag {
+        color: $tertiary-color-light;
+      }
+      .project-description {
+        color: $primary-color-light;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contain {
+    width: 100vw;
+    margin: auto;
+
+    .sun-moon {
+      position: fixed;
+      top: 20px;
+      right: 16px;
+      z-index: 10;
+
+      svg {
+        width: 30px;
+      }
+    }
+
+    .call-to-action {
+      display: block;
+      margin: 3rem auto;
+      width: 158px;
+    }
+
+    .service-card {
+      &:hover {
+        transform: scale(1.05);
+        z-index: 1;
+
+        img {
+          transform: translateX(0px);
+        }
+      }
+    }
+
+    .primary-header {
+      font-size: 26px;
+      text-transform: uppercase;
+      position: relative;
+      font-weight: 400;
+
+      span {
+        color: $secondary-color-dark;
+        margin-right: 10px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 70%;
+        left: 103%;
+        width: 0;
+        border-bottom: 3px solid $secondary-color-dark;
+      }
+    }
+
+    .portfolio-card {
+      img {
+        height: 230px;
+      }
+
+      h3 {
+        font-size: 20px;
+        line-height: 26px;
+        margin-top: 10px;
+      }
+
+      .project-content {
+        padding: 20px 25px;
+      }
+
+      .service-tag {
+        font-size: 14px;
+        letter-spacing: 0.35px;
+        font-weight: 600;
+      }
+
+      .project-description {
+        font-family: $jost-fonts;
+        margin-top: 20px;
+        color: $light-color-dark;
+        font-weight: 300;
+        font-size: 16px;
+        letter-spacing: 0.4px;
+      }
+    }
+    .testimonial-card {
+      &:hover {
+        .client-section {
+          .client-image {
+            transform: scale(1.15);
+          }
+        }
+      }
+    }
+  }
+}

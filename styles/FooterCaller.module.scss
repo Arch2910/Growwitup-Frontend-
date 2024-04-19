@@ -1,0 +1,134 @@
+@use "theme" as *;
+@import url("https://fonts.googleapis.com/css2?family=Rhodium+Libre&display=swap");
+
+.call-to-footer {
+  background-color: $tertiary-color-dark;
+  padding: 1rem 2rem;
+  font-size: 1.15rem;
+  border-radius: 3px;
+  transition: all 300ms ease;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  font-family: "Inter", sans-serif !important;
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: none;
+  }
+  .up-arrow {
+    transform: rotateZ(45deg);
+    margin-left: 8px;
+  }
+}
+.datepicker {
+  position: fixed;
+  background-color: white;
+  padding: 3rem;
+  z-index: 150;
+  bottom: 0;
+  width: 350px;
+  right: 5%;
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  span {
+    color: $primary-color-light;
+    font-family: "Inter", sans-serif !important;
+  }
+  input {
+    margin-top: 1rem;
+    width: inherit;
+    font-family: "Inter", sans-serif !important;
+  }
+  button[type="submit"] {
+    background-color: $primary-color-dark;
+    color: $light-color-dark;
+    width: inherit;
+    font-family: "Inter", sans-serif !important;
+    border-radius: 8px;
+    margin-top: 1rem;
+    width: 100%;
+    font-size: 15px;
+    padding: 14px 18px;
+    letter-spacing: 0.5px;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+      7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+    &:hover {
+      transform: scale(1.01);
+      box-shadow: none;
+    }
+  }
+}
+
+.overlay {
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.l-call-to-footer {
+  font-family: "Inter", sans-serif !important;
+  background-color: $tertiary-color-light;
+}
+
+.footer-caller {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-bottom: 2px solid rgb(58, 58, 58);
+    width: 100%;
+  }
+  div {
+    p {
+      color: rgb(236, 236, 236);
+      font-size: 1.15rem;
+      font-family: "Rhodium Libre", serif !important;
+    }
+  }
+}
+
+.l-footer-caller {
+  div {
+    p {
+      color: $primary-color-light;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-caller {
+    flex-direction: column;
+    align-items: center;
+    &::after {
+      left: 50%;
+      transform: translate(-50%);
+      width: 90%;
+    }
+    div {
+      p {
+        font-size: 0.95rem;
+      }
+      .call-to-footer {
+        background-color: rgb(179, 122, 0);
+        padding: 0.5rem;
+        font-size: 0.95rem;
+      }
+    }
+  }
+  .datepicker {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+  }
+}

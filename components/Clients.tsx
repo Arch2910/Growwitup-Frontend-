@@ -14,7 +14,7 @@ const Clients = () => {
       }`}
     >
       <SectionHeader header="clients" prefix="our" />
-      <div className="grid grid-cols-4 justify-between mt-20 mx-auto gap-4">
+      <div className="flex justify-between mt-20 gap-4">
         <div className={styles["brand-wrapper"]}>
           <img
             src="images/Co-Buy.svg"
